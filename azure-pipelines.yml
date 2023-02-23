@@ -16,11 +16,6 @@ pool:
   vmImage: $(imageName)
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
 - task: secretBatchRetrievalConnector@0
   inputs:
     ConjurService: 'ConjurSConnection'
