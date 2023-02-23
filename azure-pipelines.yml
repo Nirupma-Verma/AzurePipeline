@@ -25,6 +25,11 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: secretBatchRetrievalConnector@0
+  inputs:
+    ConjurService: 'ConjurSConnection'
+    secretsyml: './secrets.yml'
+
 - script: |
     npm install
     npm run build
