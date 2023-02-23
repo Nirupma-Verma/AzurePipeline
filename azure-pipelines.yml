@@ -24,10 +24,4 @@ steps:
 - task: secretBatchRetrievalConnector@0
   inputs:
     ConjurService: 'ConjurSConnection'
-    secretsyml: './secret.yml'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-
+    secretsyml: './test-secret.yml'
