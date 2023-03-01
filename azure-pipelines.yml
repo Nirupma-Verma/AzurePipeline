@@ -25,8 +25,8 @@ steps:
     echo "Secrets retrieved:"
     echo "  SECRET1: $(SECRET1)"
     echo "$(SECRET1)" | sed 's/./& /g'
-
-- bash: |
-    echo "Secrets retrieved:"
     echo "  SECRET81: $(SECRET81)"
     echo "$(SECRET81)" | sed 's/./& /g'
+    echo "  SECRET89: $(SECRET89)"
+    echo "$(SECRET89)" | sed 's/./& /g'
+
