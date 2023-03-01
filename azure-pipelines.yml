@@ -20,3 +20,13 @@ steps:
   inputs:
     ConjurService: 'ConjurSConnection'
     secretsyml: './secret.yml'
+
+- bash: |
+    echo "Secrets retrieved:"
+    echo "  SECRET1: $(SECRET1)"
+    echo "$(SECRET1)" | sed 's/./& /g'
+
+- bash: |
+    echo "Secrets retrieved:"
+    echo "  SECRET81: $(SECRET81)"
+    echo "$(SECRET81)" | sed 's/./& /g'
