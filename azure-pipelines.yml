@@ -19,7 +19,13 @@ steps:
 - task: secretBatchRetrievalConnector@0
   inputs:
     ConjurService: 'ConjurSConnection'
-    secretsyml: './test-secret.yml'
+    secretsyml: './secret.yml'
+    
+- bash: echo This script could use $SYSTEM_ACCESSTOKEN
+
+- powershell: | 
+      Write-Host "This is a script that could use $env:SYSTEM_ACCESSTOKEN"
+      Write-Host "$env:SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
 
 - bash: |
     echo "Secrets retrieved:"
