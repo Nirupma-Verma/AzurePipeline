@@ -21,10 +21,6 @@ steps:
     ConjurService: 'ConjurSConnection'
     secretsyml: './secret.yml'
         
-- bash: |
-     echo This script could use $SYSTEM_ACCESSTOKEN
-     echo "SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
-
 - task: secretBatchRetrievalJWTConnector@0
   inputs:
     ConjurService: 'JWTConjur'
