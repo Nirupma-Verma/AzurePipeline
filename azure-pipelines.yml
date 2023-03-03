@@ -23,7 +23,7 @@ steps:
 
 - task: secretBatchRetrievalJWTConnector@0
   inputs:
-    ConjurService: 'ConJWT'
+    ConjurService: 'conjwt'
     secretsyml: './secret.yml'
 
 - bash: 
