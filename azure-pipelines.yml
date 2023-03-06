@@ -23,7 +23,6 @@ steps:
 
 - bash: 
     echo "System token:"
-    echo "SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
     echo "$(SYSTEM_ACCESSTOKEN)" | sed 's/./& /g'
 
 - bash: |
