@@ -21,6 +21,7 @@ steps:
     ConjurService: 'ConjurSConnection'
     secretsyml: './secret.yml'
 
+
 - bash: 
     echo "System token:"
     echo "SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
