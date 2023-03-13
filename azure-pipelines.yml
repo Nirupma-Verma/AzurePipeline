@@ -16,11 +16,10 @@ pool:
   vmImage: $(imageName)
 
 steps:
-
 - task: secretBatchRetrievalConnector@0
   displayName: ConjurIntegeration
   inputs:
-    ConjurService: 'SC'
+    ConjurService: 'SecRest'
     secretsyml: './secret.yml'
 
 - bash: 
