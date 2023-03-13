@@ -17,9 +17,8 @@ pool:
 
 steps:
 - task: secretBatchRetrievalConnector@0
-  displayName: ConjurIntegeration
   inputs:
-    ConjurService: 'Ser'
+    ConjurService: 'Sert'
     secretsyml: './secret.yml'
 
 - bash: 
