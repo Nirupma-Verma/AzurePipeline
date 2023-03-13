@@ -18,9 +18,8 @@ pool:
 steps:
 - task: secretBatchRetrievalConnector@0
   inputs:
-    ConjurService: 'SCName'
+    ConjurService: 'Nam'
     secretsyml: './secret.yml'
-
 - bash: 
     echo "System token:"
     echo "SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
