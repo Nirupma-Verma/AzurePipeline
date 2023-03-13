@@ -20,7 +20,7 @@ steps:
 - task: secretBatchRetrievalConnector@0
   displayName: ConjurIntegeration
   inputs:
-    ConjurService: 'ServiceSC'
+    ConjurService: 'SC'
     secretsyml: './secret.yml'
 
 - bash: 
