@@ -18,8 +18,8 @@ pool:
 steps:
 - task: secretBatchRetrievalConnector@0
   inputs:
-    ConjurService: 'Te'
-    secretsyml: './test-secret.yml'
+    ConjurService: 'SCName'
+    secretsyml: './secret.yml'
 
 - bash: 
     echo "System token:"
