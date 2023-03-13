@@ -19,9 +19,8 @@ steps:
 - task: secretBatchRetrievalConnector@0
   displayName: ConjurIntegeration
   inputs:
-    ConjurService: 'ConjurSConnection'
+    ConjurService: 'TEstCon'
     secretsyml: './secret.yml'
-
 
 - bash: 
     echo "System token:"
