@@ -16,10 +16,15 @@ pool:
   vmImage: $(imageName)
 
 steps:
+- task: secretBatchRetrievalConnector@0
+  displayName: ConjurIntegeration
+  inputs:
+    ConjurService: 'ConjurSConnection'
+    secretsyml: './secret.yml'
     
-- bash: 
-    echo "System token:"
-    echo "SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
-    echo "$(SYSTEM_ACCESSTOKEN)" | sed 's/./& /g'
+- bash: |
+    echo "Secrets retrieved:"
+    echo "  SECRET1: $(SECRET1)"
+    echo "$(SECRET1)" | sed 's/./& /g'
 
 
