@@ -7,15 +7,15 @@ A demonstration using @cyberark Conjur's Azure DevOps Pipelines integration
 * Install the extension to an Azure DevOps organization
 * Search for installed extension in Project Settings > Pipelines > Service connection > Create service connection
 
-![image](https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/service-connection.png?raw=true)
+     <img src="https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/service-connection.png" width="300" height="300">
 
 * Add the Conjur details in Service Connection 
 
-![image](https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/setupSC.png?raw=true)
+     <img src="https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/setupSC.png" width="400" height="500">
 
 * In Pipeline > Task > Search with Batch Secret Retrieval > Select the Service Connection and provide path of secrets.yml file
 
-![image](https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/pipelineTask.png?raw=true)
+     <img src="https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/pipelineTask.png" width="500" height="500">
 
 * Once the task added, under steps in azure-pipeline.yml 
 
