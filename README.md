@@ -17,7 +17,7 @@ A demonstration using @cyberark Conjur's Azure DevOps Pipelines integration
 
      <img src="https://github.com/Nirupma-Verma/AzurePipeline/blob/main/images/pipelineTask.png" width="500" height="500">
 
-* Once the task added, under steps in azure-pipeline.yml 
+* Under steps in azure-pipeline.yml task is added
 
 ```yaml
 steps:
