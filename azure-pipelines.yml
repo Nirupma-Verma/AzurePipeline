@@ -20,7 +20,6 @@ steps:
   inputs:
     ConjurService: 'ConjurCloud'
     secretsyml: './ado_secret.yml'
-
     
 - bash: |
     echo "Secrets retrieved:"
