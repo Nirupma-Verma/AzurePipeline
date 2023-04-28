@@ -18,8 +18,8 @@ pool:
 steps:
 - task: secretBatchRetrievalConnector@0
   inputs:
-    ConjurService: 'ConjurCloud'
-    secretsyml: './ado_secret.yml'
+    ConjurService: 'CloudConjur'
+    secretsyml: './ado-secrets.yml'
     
 - bash: |
     echo "Secrets retrieved:"
