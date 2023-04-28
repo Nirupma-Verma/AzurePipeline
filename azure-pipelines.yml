@@ -19,7 +19,7 @@ steps:
 - task: secretBatchRetrievalConnector@0
   displayName: ConjurIntegeration
   inputs:
-    ConjurService: 'ConjurCloud'
+    ConjurService: 'IdentityCloud'
     secretsyml: './ado_secret.yml'
     
 - bash: |
