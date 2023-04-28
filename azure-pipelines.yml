@@ -17,14 +17,14 @@ pool:
 
 steps:
 - task: secretBatchRetrievalConnector@0
-  displayName: ConjurIntegeration
   inputs:
-    ConjurService: 'IdentityCloud'
+    ConjurService: 'ConjurCloud'
     secretsyml: './ado_secret.yml'
+
     
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET1: $(SECRET1)"
-    echo "$(SECRET1)" | sed 's/./& /g'
+
 
 
