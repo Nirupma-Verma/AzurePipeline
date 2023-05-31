@@ -19,7 +19,7 @@ steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
     ConjurService: 'TestNew'
-    secretsyml: './secrets.yml'
+    secretsyml: './ado_secret.yml'
 
 - bash: |
     echo "Secrets retrieved:"
