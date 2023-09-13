@@ -24,7 +24,7 @@ steps:
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
-    echo "$(SECRET1)" | sed 's/./& /g'
+    echo "$(SECRET)" | sed 's/./& /g'
 
 
 
