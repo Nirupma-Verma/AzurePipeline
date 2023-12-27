@@ -16,15 +16,16 @@ pool:
   vmImage: $(imageName)
 
 steps:
+
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'Cloud Edge'
-    secretsyml: './edge.yml'
+    ConjurService: 'NewConjurConn'
+    secretsyml: './ado_secret.yml'
 
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
-    echo "$(SECRET)" | sed 's/./& /g'
+    echo "$(SECRET)" | sed 's/./& /g']
 
 
 
