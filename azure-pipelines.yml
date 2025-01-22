@@ -6,16 +6,9 @@
 trigger:
 - main
 
-# strategy:
-#   matrix:
-#     linux:
-#       imageName: "ubuntu-latest"
-      
-# pool:
-#   vmImage: $(imageName)
+pool: { vmImage: ubuntu-latest }
 
 steps:
-
 - task: secretBatchRetrievalConnector@1
   inputs:
     ConjurService: 'ADOJWT'
