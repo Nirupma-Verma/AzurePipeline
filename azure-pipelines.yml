@@ -6,24 +6,12 @@
 trigger:
 - main
 
-pool: { vmImage: ubuntu-latest }
-
+pool:
+  vmImage: 'ubuntu-latest'
+  
 steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
     ConjurService: 'ADOJWT'
     secretsyml: './secrets.yml'
     serviceNameAzureRM: 'AdoTrialConnection'
-
-# - task: secretBatchRetrievalConnector@1
-#   inputs:
-#     ConjurService: 'NewConjurConn'
-#     secretsyml: './ado_secret.yml'
-
-# - bash: |
-#     echo "Secrets retrieved:"
-#     echo "  SECRET: $(SECRET)"
-#     echo "$(SECRET)" | sed 's/./& /g'
-
-
-
