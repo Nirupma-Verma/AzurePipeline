@@ -8,10 +8,12 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-  
-steps:
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    ConjurService: 'ADOJWT'
-    secretsyml: './secrets.yml'
-    serviceNameAzureRM: 'AdoTrialConnection'
+
+jobs:
+- job: MatrixJob1  
+  steps:
+  - task: secretBatchRetrievalConnector@1
+    inputs:
+      ConjurService: 'ADOJWT'
+      secretsyml: './secrets.yml'
+      serviceNameAzureRM: 'AdoTrialConnection'
