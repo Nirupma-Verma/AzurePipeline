@@ -8,11 +8,9 @@ trigger:
 
 pool: default
 
-jobs:
-- job: MatrixJob1  
-  steps:
-  - task: secretBatchRetrievalConnector@1
-    inputs:
-      ConjurService: 'ADOJWT'
-      secretsyml: './secrets.yml'
-      serviceNameAzureRM: 'AdoTrialConnection'
+steps:
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    ConjurService: 'ADOJWT'
+    secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'AdoTrialConnection'
