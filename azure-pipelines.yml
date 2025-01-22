@@ -6,13 +6,13 @@
 trigger:
 - main
 
-strategy:
-  matrix:
-    linux:
-      imageName: "ubuntu-latest"
-
-pool:
-  vmImage: $(imageName)
+# strategy:
+#   matrix:
+#     linux:
+#       imageName: "ubuntu-latest"
+      
+# pool:
+#   vmImage: $(imageName)
 
 steps:
 
