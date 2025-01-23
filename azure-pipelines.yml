@@ -14,3 +14,4 @@ steps:
     authtype: 'jwt'
     ConjurService: 'AdoApi'
     secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'AdoTrialConnection'
