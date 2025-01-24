@@ -11,7 +11,13 @@ pool: default
 steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
-    authtype: 'jwt'
-    ConjurService: 'AdoAPi'
+    authntype: 'api'
+    ConjurAPIService: 'AdoApi'
+    secretsyml: './secrets.yml'
+
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'jwt'
+    ConjurJWTService: 'ADOJwt'
     secretsyml: './secrets.yml'
     serviceNameAzureRM: 'AdoTrialConnection'
