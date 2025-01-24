@@ -11,12 +11,6 @@ pool: default
 steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
-    authntype: 'api'
-    ConjurAPIService: 'AdoApi'
-    secretsyml: './secrets.yml'
-
-- task: secretBatchRetrievalConnector@1
-  inputs:
     authntype: 'jwt'
     ConjurJWTService: 'AdoJwt'
     secretsyml: './secrets.yml'
