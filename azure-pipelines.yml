@@ -9,23 +9,23 @@ trigger:
 pool: default
 
 steps:      
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'api'
-    ConjurAPIService: 'AdoApi'
-    secretsyml: './secrets.yml'
+# - task: secretBatchRetrievalConnector@1
+#   inputs:
+#     authntype: 'api'
+#     ConjurAPIService: 'AdoApi'
+#     secretsyml: './secrets.yml'
 
-- bash: |
-    echo "Secrets retrieved:"
-    echo "  SECRET: $(SECRET)"
+# - bash: |
+#     echo "Secrets retrieved:"
+#     echo "  SECRET: $(SECRET)"
 
 - task: secretBatchRetrievalConnector@1
   inputs:
     authntype: 'jwt'
     ConjurJWTService: 'AdoJwt'
-    secretsyml: './test-secret.yml'
+    secretsyml: './secrets.yml'
     serviceNameAzureRM: 'AdoTrialConnection'
 
 - bash: |
     echo "Secrets retrieved:"
-    echo "  Password: $(PASSWORD)"
+    echo "  SECRET: $(SECRET)"
