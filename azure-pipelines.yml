@@ -14,3 +14,7 @@ steps:
     authntype: 'api'
     ConjurJWTService: 'AdoApi'
     secretsyml: './secrets.yml'
+
+- bash: |
+    echo "Secrets retrieved:"
+    echo "  SECRET1: $(SECRET1)"
