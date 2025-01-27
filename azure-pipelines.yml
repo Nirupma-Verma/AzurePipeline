@@ -12,9 +12,9 @@ steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
     authntype: 'api'
-    ConjurJWTService: 'AdoApi'
+    ConjurAPIService: 'AdoApi'
     secretsyml: './secrets.yml'
 
 - bash: |
     echo "Secrets retrieved:"
-    echo "  SECRET1: $(SECRET1)"
+    echo "  SECRET: $(SECRET)"
