@@ -14,31 +14,20 @@ steps:
 #     authntype: 'api'
 #     ConjurAPIService: 'AdoApi'
 #     secretsyml: './secrets.yml'
-
-# - bash: |
-#     echo "Secrets retrieved:"
-#     echo "  SECRET: $(SECRET)"
-
-
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'api'
-    ConjurAPIService: 'AdoApi'
-    secretsyml: './secrets.yml'
     
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'jwt'
-    ConjurJWTService: 'AdoJwt'
-    secretsyml: './secrets.yml'
-    serviceNameAzureRM: 'AdoTrialConnection'
-
 # - task: secretBatchRetrievalConnector@1
 #   inputs:
 #     authntype: 'jwt'
 #     ConjurJWTService: 'AdoJwt'
 #     secretsyml: './secrets.yml'
 #     serviceNameAzureRM: 'AdoTrialConnection'
+
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'jwt'
+    ConjurJWTService: 'AdoJwt'
+    secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'Azure subscription 1(df469024-f075-430a-a671-78e3711f3003)'
 
 - bash: |
     echo "Secrets retrieved:"
