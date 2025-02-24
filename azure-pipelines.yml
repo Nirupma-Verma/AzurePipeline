@@ -15,7 +15,6 @@ steps:
     ConjurJWTService: 'AdoJwt'
     secretsyml: './secrets.yml'
     serviceNameAzureRM: 'AdoTrialConnection'
-    
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
