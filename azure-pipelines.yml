@@ -15,12 +15,17 @@ steps:
 #     ConjurAPIService: 'AdoApi'
 #     secretsyml: './secrets.yml'
 
+# - task: secretBatchRetrievalConnector@1
+#   inputs:
+#     authntype: 'jwt'
+#     ConjurJWTService: 'AdoJwt'
+#     secretsyml: './secrets.yml'
+#     serviceNameAzureRM: 'AdoTrialConnection'
+
 - task: secretBatchRetrievalConnector@1
   inputs:
-    authntype: 'jwt'
-    ConjurJWTService: 'AdoJwt'
+    ConjurService: 'CloudConjur'
     secretsyml: './secrets.yml'
-    serviceNameAzureRM: 'AdoTrialConnection'
     
 - bash: |
     echo "Secrets retrieved:"
