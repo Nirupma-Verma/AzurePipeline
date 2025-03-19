@@ -18,7 +18,7 @@ pool:
 steps:      
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'CloudConjur'
+    ConjurService: 'NewSVC20'
     secretsyml: './secrets.yml'
     
 - bash: |
