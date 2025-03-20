@@ -18,7 +18,7 @@ pool:
 steps:      
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'NodeNewCon'
+    ConjurService: 'SVCAPI'
     secretsyml: './secrets.yml'
 - bash: |
     echo "Secrets retrieved:"
