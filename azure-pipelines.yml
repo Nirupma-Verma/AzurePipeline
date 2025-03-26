@@ -18,13 +18,7 @@ pool:
 steps:      
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'AdoApi'
-    secretsyml: './secrets.yml'
-
-- task: secretBatchRetrievalConnector@2
-  inputs:
-    authntype: 'api'
-    ConjurService: 'AdoApiNew'
+    ConjurService: 'AdoApiOld'
     secretsyml: './secrets.yml'
     
 - bash: |
