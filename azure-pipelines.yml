@@ -21,6 +21,7 @@ steps:
     authntype: 'api'
     ConjurService: 'AdoTest'
     secretsyml: './secrets.yml'
+    
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
