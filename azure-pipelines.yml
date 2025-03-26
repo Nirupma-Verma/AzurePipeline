@@ -20,6 +20,12 @@ steps:
   inputs:
     ConjurService: 'OldAdo'
     secretsyml: './secrets.yml'
+
+- task: secretBatchRetrievalConnector@2
+  inputs:
+    authntype: 'api'
+    ConjurService: 'NewApi'
+    secretsyml: './secrets.yml'
     
 - bash: |
     echo "Secrets retrieved:"
