@@ -20,7 +20,7 @@ steps:
   inputs:
     authntype: 'api'
     ConjurService: 'UcoAdo'
-    secretsyml: './secr.ym'
+    secretsyml: './secrets.yml'
     
 - bash: |
     echo "Secrets retrieved:"
