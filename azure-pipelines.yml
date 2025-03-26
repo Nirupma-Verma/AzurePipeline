@@ -18,8 +18,7 @@ pool:
 steps:      
 - task: secretBatchRetrievalConnector@1
   inputs:
-    authntype: 'api'
-    ConjurService: 'UcoAdo'
+    ConjurService: 'OldAdo'
     secretsyml: './secrets.yml'
     
 - bash: |
