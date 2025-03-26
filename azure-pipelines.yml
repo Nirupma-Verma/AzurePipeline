@@ -16,14 +16,10 @@ pool:
    vmImage: $(imageName)
 
 steps:      
-# - task: secretBatchRetrievalConnector@1
-#   inputs:
-#     ConjurService: 'AdoOld'
-#     secretsyml: './secrets.yml'
 - task: secretBatchRetrievalConnector@1
   inputs:
     authntype: 'api'
-    ConjurService: 'AdoNew'
+    ConjurService: 'AdoTest'
     secretsyml: './secrets.yml'
 - bash: |
     echo "Secrets retrieved:"
