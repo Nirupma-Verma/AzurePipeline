@@ -19,7 +19,7 @@ steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
     authntype: 'api'
-    ConjurService: 'AdoTest'
+    ConjurService: 'UcoAdo'
     secretsyml: './secrets.yml'
     
 - bash: |
