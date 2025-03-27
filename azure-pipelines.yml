@@ -19,7 +19,7 @@ steps:
 - task: secretBatchRetrievalConnector@2
   inputs:
     authntype: 'jwt'
-    ConjurJWTService: 'NewJWTSVC'
+    ConjurJWTService: 'AdoJwt'
     secretsyml: './secrets.yml'
     serviceNameAzureRM: 'AdoTrialConnection'
     
