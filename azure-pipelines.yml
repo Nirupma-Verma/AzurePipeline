@@ -16,12 +16,10 @@ pool:
    vmImage: $(imageName)
 
 steps:      
-- task: secretBatchRetrievalConnector@2
+- task: secretBatchRetrievalConnector@1
   inputs:
-    authntype: 'jwt'
-    ConjurJWTService: 'OssJWT'
-    secretsyml: './oss-bulk.yml'
-    serviceNameAzureRM: 'AdoTrialConnection'
+    ConjurService: 'Tryip'
+    secretsyml: './secrets.yml'
     
 - bash: |
     echo "Secrets retrieved:"
