@@ -15,7 +15,30 @@ trigger:
 pool: default
   #  vmImage: $(imageName)
 
-steps:      
+steps:     
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Rser'
+    scriptType: pscore
+    scriptLocation: inlineScript
+    inlineScript: |
+      # Get the access token using Managed Identity and store it in a PowerShell variable
+      $token = az account get-access-token --query accessToken --output tsv
+
+      # Check if the token is retrieved successfully
+      if (-not $token) {
+        Write-Error "Failed to retrieve the Azure access token."
+        exit 1
+      }
+
+      # Print the raw access token (optional, for debugging)
+      Write-Host "Raw Access Token: $token"
+
+      # Convert the access token to base64 encoding
+      $tokenBase64 = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($token))
+
+      # Print the base64 encoded access token (for debugging)
+      Write-Host "Base64 Encoded Access Token: $tokenBase64"
 - task: secretBatchRetrievalConnector@1
   inputs:
     authntype: 'jwt'
