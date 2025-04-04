@@ -6,14 +6,14 @@
 trigger:
 - main
 
-strategy:
-   matrix:
-     linux:
-       imageName: "ubuntu-latest"
-   maxParallel: 3 
+# strategy:
+#    matrix:
+#      linux:
+#        imageName: "ubuntu-latest"
+#    maxParallel: 3 
  
-pool:
-   vmImage: $(imageName)
+pool: default
+  #  vmImage: $(imageName)
 
 steps:      
 - task: secretBatchRetrievalConnector@1
