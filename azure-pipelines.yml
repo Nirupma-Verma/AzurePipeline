@@ -22,6 +22,12 @@ steps:
     ConjurJWTService: 'connect'
     secretsyml: './secrets.yml'
     serviceNameAzureRM: 'Rser'
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'jwt'
+    ConjurJWTService: 'connect'
+    secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'SVCMang'
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
