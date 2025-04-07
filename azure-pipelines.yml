@@ -35,7 +35,7 @@ steps:
    access_token_base64=$(echo -n "$access_token" | base64)
    echo "##vso[task.setvariable variable=ACCESS_TOKEN]$access_token_base64"
    echo "Access Token: $access_token_base64"
-   echo "sfsfs:: $(ARM_ID_TOEKN)"
+   echo "sfsfs:: $(ARM_ID_TOEKN | base64)"
   displayName: 'Login Azure'
  
 - task: AzureCLI@2
