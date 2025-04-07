@@ -18,7 +18,7 @@ pool: default
 steps:     
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'SVCMang'
+    azureSubscription: 'Rser'
     scriptType: pscore
     scriptLocation: inlineScript
     inlineScript: |
