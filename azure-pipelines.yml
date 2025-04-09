@@ -20,6 +20,13 @@ steps:
   inputs:
     ConjurService: 'AdoApi'
     secretsyml: './secrets.yml'
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'jwt'
+    ConjurJWTService: 'AdoJwt'
+    secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'Rser'
+    
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
