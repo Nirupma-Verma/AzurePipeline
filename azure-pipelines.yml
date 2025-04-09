@@ -16,63 +16,10 @@ pool: default
   #  vmImage: $(imageName)
 
 steps:    
-- task: AzureCLI@2
-  displayName: 'Azure CLI '
-  inputs:
-    azureSubscription: 'Rser'
-    addSpnToEnvironment: true
-    scriptType: bash
-    scriptLocation: inlineScript
-    inlineScript: |
-     echo "##vso[task.setvariable variable=ARM_CLIENT_ID]$servicePrincipalId" 
-     echo "##vso[task.setvariable variable=ARM_ID_TOEKN]$idToken"
-     echo "##vso[task.setvariable variable=ARM_TENANT_ID]$tenantId"
-
-
-- bash: |
-   az login --service-principal -u $(ARM_CLIENT_ID) --tenant $(ARM_TENANT_ID) --allow-no-subscriptions --federated-token $(ARM_ID_TOEKN)
-   access_token=$(az account get-access-token --query accessToken -o tsv)
-   access_token_base64=$(echo -n "$access_token" | base64)
-   echo "##vso[task.setvariable variable=ACCESS_TOKEN]$access_token_base64"
-   echo "Access Token: $access_token_base64"
-   echo "sfsfs:: $(ARM_ID_TOEKN | base64)"
-  displayName: 'Login Azure'
- 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Rser'
-    scriptType: pscore
-    scriptLocation: inlineScript
-    inlineScript: |
-      # Get the access token using Managed Identity and store it in a PowerShell variable
-      $token = az account get-access-token --query accessToken --output tsv
-
-      # Check if the token is retrieved successfully
-      if (-not $token) {
-        Write-Error "Failed to retrieve the Azure access token."
-        exit 1
-      }
-
-      # Print the raw access token (optional, for debugging)
-      Write-Host "Raw Access Token: $token"
-
-      # Convert the access token to base64 encoding
-      $tokenBase64 = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($token))
-
-      # Print the base64 encoded access token (for debugging)
-      Write-Host "Base64 Encoded Access Token: $tokenBase64"
 - task: secretBatchRetrievalConnector@1
   inputs:
-    authntype: 'jwt'
-    ConjurJWTService: 'connect'
+    ConjurService: 'AdoApi'
     secretsyml: './secrets.yml'
-    serviceNameAzureRM: 'Rser'
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'jwt'
-    ConjurJWTService: 'connect'
-    secretsyml: './secrets.yml'
-    serviceNameAzureRM: 'SVCMang'
 - bash: |
     echo "Secrets retrieved:"
     echo "  SECRET: $(SECRET)"
