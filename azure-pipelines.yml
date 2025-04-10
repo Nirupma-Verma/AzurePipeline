@@ -6,12 +6,19 @@
 trigger:
 - main
 
-pool: default
+strategy:
+    matrix:
+      linux:
+        imageName: "ubuntu-latest"
+    maxParallel: 3 
+ 
+pool:
+    vmImage: $(imageName)
 
 steps:    
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'Old1.2.4Exten'
+    ConjurService: 'OldApi1.2.4'
     secretsyml: './secrets.yml'
     
 - bash: |
