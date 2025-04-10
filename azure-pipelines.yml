@@ -6,13 +6,28 @@
 trigger:
 - main
 
-pool: default
+strategy:
+    matrix:
+      linux:
+        imageName: "ubuntu-latest"
+    maxParallel: 3 
+ 
+pool:
+    vmImage: $(imageName)
 
 steps:    
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'OldApi1.2.4'
+    authntype: 'api'
+    ConjurService: 'Old1.2.4Exten'
     secretsyml: './secrets.yml'
+
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'jwt'
+    ConjurJWTService: 'AdoJWT'
+    secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'AdoTrialConnection'
     
 - bash: |
     echo "Secrets retrieved:"
