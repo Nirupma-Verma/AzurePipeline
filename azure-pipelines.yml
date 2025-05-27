@@ -16,9 +16,15 @@ pool:
     vmImage: $(imageName)
 
 steps:    
+# - task: secretBatchRetrievalConnector@1
+#   inputs:
+#     ConjurService: 'Old1.2.4Exten'
+#     secretsyml: './secrets.yml'
+
 - task: secretBatchRetrievalConnector@1
   inputs:
-    ConjurService: 'Old1.2.4Exten'
+    authntype: 'api'
+    ConjurService: 'svc'
     secretsyml: './secrets.yml'
 
 - task: secretBatchRetrievalConnector@1
