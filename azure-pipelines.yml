@@ -20,6 +20,20 @@ steps:
 #   inputs:
 #     ConjurService: 'Old1.2.4Exten'
 #     secretsyml: './secrets.yml'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: AdoTrialConnection
+    scriptType: pscore
+    scriptLocation: inlineScript
+    inlineScript: |
+      $token = az account get-access-token --query accessToken --output tsv
+      if (-not $token) {
+        Write-Error "Failed to retrieve the Azure access token."
+        exit 1
+      }
+      Write-Host "Raw Access Token: $token"
+      $tokenBase64 = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($token))
+      Write-Host "Base64 Encoded Access Token: $tokenBase64"
 
 - task: secretBatchRetrievalConnector@1
   inputs:
