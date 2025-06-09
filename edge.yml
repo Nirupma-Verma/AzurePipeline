@@ -1,2 +1,1 @@
-SECRET: !var data/edge-test-cred-1
-ANOTHER_SECRET: !var data/edge-test-cred-2
+SECRET: !var data/apiedge/test-secret
