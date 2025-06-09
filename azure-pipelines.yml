@@ -16,9 +16,6 @@ trigger:
 #     vmImage: $(imageName)
 pool: default
 
-variables:
-  NODE_EXTRA_CA_CERTS: /Users/nirupma.verma/Downloads/conjur_cert.pem
-
 steps:    
 # - task: secretBatchRetrievalConnector@1
 #   inputs:
