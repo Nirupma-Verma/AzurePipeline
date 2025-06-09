@@ -23,21 +23,21 @@ steps:
 - task: secretBatchRetrievalConnector@1
   inputs:
     authntype: 'api'
-    ConjurService: 'svc'
+    ConjurService: 'TeleCh'
     secretsyml: './secrets.yml'
 
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'jwt'
-    ConjurJWTService: 'AdoJwt'
-    secretsyml: './secrets.yml'
-    serviceNameAzureRM: 'AdoTrialConnection'
+# - task: secretBatchRetrievalConnector@1
+#   inputs:
+#     authntype: 'jwt'
+#     ConjurJWTService: 'AdoJwt'
+#     secretsyml: './secrets.yml'
+#     serviceNameAzureRM: 'AdoTrialConnection'
 
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'api'
-    ConjurService: 'Old1.2.4Exten'
-    secretsyml: './secrets.yml'
+# - task: secretBatchRetrievalConnector@1
+#   inputs:
+#     authntype: 'api'
+#     ConjurService: 'Old1.2.4Exten'
+#     secretsyml: './secrets.yml'
     
 - bash: |
     echo "Secrets retrieved:"
