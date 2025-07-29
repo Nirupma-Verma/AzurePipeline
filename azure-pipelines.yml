@@ -21,18 +21,18 @@ steps:
 #   inputs:
 #     ConjurService: 'Old1.2.4Exten'
 #     secretsyml: './secrets.yml'
-- task: secretBatchRetrievalConnector@1
-  inputs:
-    authntype: 'api'
-    ConjurService: 'TeleCh'
-    secretsyml: './edge.yml'
-
 # - task: secretBatchRetrievalConnector@1
 #   inputs:
-#     authntype: 'jwt'
-#     ConjurJWTService: 'AdoJwt'
-#     secretsyml: './secrets.yml'
-#     serviceNameAzureRM: 'AdoTrialConnection'
+#     authntype: 'api'
+#     ConjurService: 'TeleCh'
+#     secretsyml: './edge.yml'
+
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'jwt'
+    ConjurJWTService: 'AdoJwt'
+    secretsyml: './secrets.yml'
+    serviceNameAzureRM: 'AdoTrialConnection'
 
 # - task: secretBatchRetrievalConnector@1
 #   inputs:
