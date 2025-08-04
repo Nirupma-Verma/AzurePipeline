@@ -17,15 +17,11 @@ pool:
 # pool: default
 
 steps:    
-# - task: secretBatchRetrievalConnector@1
-#   inputs:
-#     ConjurService: 'Old1.2.4Exten'
-#     secretsyml: './secrets.yml'
-# - task: secretBatchRetrievalConnector@1
-#   inputs:
-#     authntype: 'api'
-#     ConjurService: 'TeleCh'
-#     secretsyml: './edge.yml'
+- task: secretBatchRetrievalConnector@1
+  inputs:
+    authntype: 'api'
+    ConjurService: 'TeleCh'
+    secretsyml: './secrets.yml'
 
 - task: secretBatchRetrievalConnector@1
   inputs:
